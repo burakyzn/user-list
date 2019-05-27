@@ -1,4 +1,7 @@
 #navCard {
-  width: 18rem; }
-  #navCard .test {
-    border: 1px solid black; }
+  width: 18rem;
+  text-align: center;
+  margin: auto; }
+
+.userCard {
+  margin-top: 10px; }
