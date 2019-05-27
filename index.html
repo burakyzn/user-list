@@ -13,26 +13,19 @@
     
     <div class="container-fluid">
         <div class="row">
-            <div id="navCard" class="card">
-                <div style="text-align: center;border : 1px solid black;"class="col-lg-12">
-                    <div class="card-body">
-                        <form class="form-inline my-2 my-lg-0 ml-auto">
-                            <select class="form-control mr-sm-2" id="userCon">
-                                <!-- userCon -->
-                            </select>
-                            <button id="getUserButton" class="btn btn-danger my-2 my-sm-0" type="button">Get
-                                User</button>
-                        </form>
-                    </div>
+            <div id="navCard" class="card col-lg-4">
+                <div class="card-body">
+                    <form class="form-inline">
+                        <select class="form-control mr-sm-2" id="userCon">
+                            <!-- userCon -->
+                        </select>
+                    </form>
                 </div>
             </div>
-            <div id="navCard" class="card">
-                <div style="text-align: center;border : 1px solid black;" class="col-lg-12">
-                    <div class="card-body">
-                        <form class="form-inline my-2 my-lg-0 ml-auto">
-                            <input type="text" name="nameSearc" id="nameSearc">
-                        </form>
-                    </div>
+            <div id="searchCard" class="card col-lg-4">
+                <div class="card-body">
+                    <span>User Search : </span>
+                    <input type="text" name="nameSearc" id="nameSearc">
                 </div>
             </div>
         </div>
