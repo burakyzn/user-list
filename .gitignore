@@ -1,2 +1,15 @@
+# Created by https://www.gitignore.io/api/sass
+# Edit at https://www.gitignore.io/?templates=sass
+
+### Sass ###
 .sass-cache/
 *.css.map
+*.sass.map
+*.scss.map
+*.scss
+
+# End of https://www.gitignore.io/api/sass
+
+resources/sass
+node_modules
+gulpfile.js
