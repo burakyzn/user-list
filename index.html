@@ -10,28 +10,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    
-    <div class="container-fluid">
-        <div class="row">
-            <div id="navCard" class="card col-lg-4">
-                <div class="card-body">
-                    <form class="form-inline">
-                        <select class="form-control mr-sm-2" id="userCon">
-                            <!-- userCon -->
-                        </select>
-                    </form>
-                </div>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">User Listing</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
+                <form class="form-inline my-2 my-lg-0 ml-auto">
+                    <span style="color:white">User : </span>
+                   <select class="form-control ml-sm-2 mr-sm-2" id="userCon">
+                        <!-- userCon -->
+                    </select>
+                    <span style="color:white;">User Search : </span>
+                    <input class=" ml-sm-2" type="text" name="nameSearc" id="nameSearc">
+                </form>
             </div>
-            <div id="searchCard" class="card col-lg-4">
-                <div class="card-body">
-                    <span>User Search : </span>
-                    <input type="text" name="nameSearc" id="nameSearc">
-                </div>
-            </div>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-sm-5">
         <div class="row" id="user-list">
             <!-- user-list -->
 
