@@ -1,4 +1,4 @@
-# user-listing
+# user-list
 Simple user listing app using randomuser.me API 
 
 # To be added
