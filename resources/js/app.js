@@ -9,6 +9,15 @@ list.forEach(function(sayi){
     userCon.appendChild(newOption);
 });
 
+function deleteAllUser(){
+    userList.innerHTML = "";
+}
+
+document.querySelector('#getUserButton').addEventListener("click",function(){
+    deleteAllUser();
+    getUser();
+})
+
 function getUser(){
     var userCon = document.querySelector('#userCon');
     var apiAddress = 'https://randomuser.me/api/?results=' + userCon.value;
@@ -21,7 +30,7 @@ function getUser(){
         if(this.status){
             const responce = JSON.parse(this.responseText);
             console.log(responce.results);
-
+            var userObj = {};
             for(var user = 0; user < responce.results.length; user++){
                 var userObj = {
                     name: responce.results[user].name.first + ' ' + responce.results[user].name.last ,
