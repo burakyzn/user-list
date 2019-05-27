@@ -20,11 +20,6 @@ function deleteAllUser(){
     userList.innerHTML = "";
 }
 
-// document.querySelector('#getUserButton').addEventListener("click",function(){
-//     deleteAllUser();
-//     getUser();
-// })
-
 document.querySelector('#userCon').addEventListener('change',function(){
     deleteAllUser();
     userObjList = [];
@@ -85,5 +80,4 @@ document.querySelector('#nameSearc').addEventListener('keyup', function(){
             userList.appendChild(newUser);
         }
     }
-
 })
