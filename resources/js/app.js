@@ -1,6 +1,12 @@
-var list = [1,2,3,4,5,6,7,8,9,10];
+var lenghtOfSelect = 50;
+
+var list = [];
 var userObjList = [];
 const userList = document.querySelector('#user-list');
+
+for(var i = 0; i < lenghtOfSelect; i++){
+    list.push(i+1);
+}
 
 list.forEach(function(sayi){
     var userCon = document.querySelector('#userCon');
@@ -14,12 +20,13 @@ function deleteAllUser(){
     userList.innerHTML = "";
 }
 
-document.querySelector('#getUserButton').addEventListener("click",function(){
-    deleteAllUser();
-    getUser();
-})
+// document.querySelector('#getUserButton').addEventListener("click",function(){
+//     deleteAllUser();
+//     getUser();
+// })
 
-function getUser(){
+document.querySelector('#userCon').addEventListener('change',function(){
+    deleteAllUser();
     userObjList = [];
     var userCon = document.querySelector('#userCon');
     var apiAddress = 'https://randomuser.me/api/?results=' + userCon.value;
@@ -57,20 +64,18 @@ function getUser(){
     }
 
     connect.send();
-}
+})
 
-document.querySelector('#nameSearc').addEventListener('change', function(){
-    //console.log(nameList);
-
+document.querySelector('#nameSearc').addEventListener('keyup', function(){
     deleteAllUser();
 
-    console.log(userObjList);
     var srcNameVal = document.querySelector('#nameSearc').value;
+    srcNameVal = srcNameVal.trim();
 
     for(var user = 0; user < userObjList.length; user++){
 
         var userNameText = userObjList[user].name
-
+ 
         if(srcNameVal == userNameText.substring(0,srcNameVal.length)){
 
             const newUser = document.createElement('div');

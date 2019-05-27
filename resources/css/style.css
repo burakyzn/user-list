@@ -5,3 +5,8 @@
 
 .userCard {
   margin-top: 10px; }
+
+#searchCard {
+  width: 18rem;
+  text-align: center;
+  margin: auto; }
