@@ -1,4 +1,5 @@
 var list = [1,2,3,4,5,6,7,8,9,10];
+var userObjList = [];
 const userList = document.querySelector('#user-list');
 
 list.forEach(function(sayi){
@@ -19,6 +20,7 @@ document.querySelector('#getUserButton').addEventListener("click",function(){
 })
 
 function getUser(){
+    userObjList = [];
     var userCon = document.querySelector('#userCon');
     var apiAddress = 'https://randomuser.me/api/?results=' + userCon.value;
     
@@ -31,6 +33,7 @@ function getUser(){
             const responce = JSON.parse(this.responseText);
             console.log(responce.results);
             var userObj = {};
+
             for(var user = 0; user < responce.results.length; user++){
                 var userObj = {
                     name: responce.results[user].name.first + ' ' + responce.results[user].name.last ,
@@ -40,7 +43,7 @@ function getUser(){
                     mail : responce.results[user].email
                 }
 
-                console.log(userObj);
+                userObjList.push(userObj);
     
                 const newUser = document.createElement('div');
                 newUser.className = 'col-lg-3 card-col';
@@ -55,3 +58,27 @@ function getUser(){
 
     connect.send();
 }
+
+document.querySelector('#nameSearc').addEventListener('change', function(){
+    //console.log(nameList);
+
+    deleteAllUser();
+
+    console.log(userObjList);
+    var srcNameVal = document.querySelector('#nameSearc').value;
+
+    for(var user = 0; user < userObjList.length; user++){
+
+        var userNameText = userObjList[user].name
+
+        if(srcNameVal == userNameText.substring(0,srcNameVal.length)){
+
+            const newUser = document.createElement('div');
+            newUser.className = 'col-lg-3 card-col';
+            newUser.innerHTML += '<div class="card userCard" style="width: 18rem;"><img class="card-img-top" src="' + userObjList[user].image + '"alt="Card image cap"><div class="card-body"><h5 class="card-title">' + userObjList[user].name + '</h5></div><ul class="list-group list-group-flush"><li class="list-group-item">Mail : ' + userObjList[user].mail + '</li><li class="list-group-item">Phone : ' + userObjList[user].phone + '</li><li class="list-group-item">Address : ' + userObjList[user].address + '</li></ul>';
+            newUser.id = "user" + userList.childElementCount;
+            userList.appendChild(newUser);
+        }
+    }
+
+})
